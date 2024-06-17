@@ -1,0 +1,51 @@
+// 640px, 1150px, 1400px
+$breakpoints-up: (
+	'medium': '40em',
+	'large': '71.875em',
+	'xlarge': '87.5em',
+);
+
+// 639px, 1149px, 1399px
+$breakpoints-down: (
+	'small': '39.9375em',
+	'medium': '71.8125em',
+	'large': '87.4375em',
+);
+
+@mixin breakpoint($size) {
+	@media (min-width: map-get($breakpoints-up, $size)) {
+		@content;
+	}
+}
+
+@mixin breakpoint-down($size) {
+	@media (max-width: map-get($breakpoints-down, $size)) {
+		@content;
+	}
+}
+
+// scss
+
+// h1{
+//     @include breakpoint(medium) {
+//         font-size: 2.5rem;
+//     }
+// }
+
+// css
+
+// @media (min-width: 40em) {
+//     h1 {
+//         font-size: 2.5rem;
+//     }
+// }
+
+// Fixed length units
+// px, cm, mm, in, pt, pc
+
+
+// Relative length units
+// em is Relative to the font-size of the element (2em means 2 times the size of the current font)
+// rem Relative to font-size of the root element
+
+
